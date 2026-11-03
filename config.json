@@ -1,0 +1,42 @@
+{
+  "_说明": "周报更新工具的规则配置。修改后保存即可，下次运行生效。以 _ 开头的键是注释，程序忽略。",
+
+  "pass_codes": ["A", "B", "C", "O"],
+  "_pass_codes": "算作“通过”的批复代码；其它代码（D/E/F/G/I 等）都算“被拒”。",
+
+  "open_status": ["Open"],
+  "_open_status": "Status Latest 等于这些值的行算“还未正式批复”。",
+
+  "sections": {
+    "1.1": {"type_column": {"MTS": "MTS", "MR": "MR", "TBE": "TBE", "NMR 601": "NMR 601", "NMR 602": "NMR 602"}},
+    "1.2": {"sheets": ["Shop Dwg"]},
+    "1.3": {"sheets": ["MS"]},
+    "1.4": {"type_column": {"TQ": "TQ", "Proposal": "Proposal"}}
+  },
+  "_sections": "PPT 小节编号 → 对应 xlsx 的 sheet。有 Type 列的表格用 type_column（左边是 PPT 里 Type 列的文字，右边是 sheet 名）；没有 Type 列的表格用 sheets。",
+
+  "prefix_patterns": [
+    "^Material\\s+Technical\\s+Submit+als?\\s+(for|of)\\s+",
+    "^Material\\s+Requisitions?\\s+(for|of)\\s+",
+    "^Tech\\w*\\s+Bid\\s+Evaluations?\\s+(for|of)\\s+",
+    "^Non[-\\s]*Material\\s+Requirements?\\s*(\\(\\s*NMR[-\\s]*\\d*\\s*\\)|NMR[-\\s]*\\d+|\\d+)?\\s*(for|of)?\\s*",
+    "^Shop\\s+Drawings?\\s+(for|of)\\s+",
+    "^Method\\s+(of\\s+)?Statements?\\s+(for|of)\\s+",
+    "^Proposal\\s+(for|of)\\s+",
+    "^Technical\\s+Query\\s+(for|of|on|regarding)\\s+",
+    "^TQ\\s*[-–:]\\s*"
+  ],
+  "_prefix_patterns": "从 Description 开头去掉的前缀（正则，不区分大小写）。只去前缀，不改其余文字。",
+
+  "tracker_pattern": "*Status*Tracker*.xlsx",
+  "_tracker_pattern": "打开程序时，会在上次台账所在的文件夹里自动选中符合这个名字、修改时间最新的 xlsx。* 代表任意字符。",
+
+  "output_name": "{date} 技术部周例会汇报材料.pptx",
+  "default_output_dir": "E:\\EdgeDOWNLODAD",
+
+  "min_font_pt": 8,
+  "_min_font_pt": "表格内容放不下时，程序会逐步缩小表格正文字号，最小到这个值；仍放不下会在核对清单里提示。",
+
+  "slide_bottom_limit_emu": 4870000,
+  "_slide_bottom_limit_emu": "内容不能超过的下边界（页面底部蓝条上沿），单位 EMU。"
+}
