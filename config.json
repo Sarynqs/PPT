@@ -38,5 +38,23 @@
   "_min_font_pt": "表格内容放不下时，程序会逐步缩小表格正文字号，最小到这个值；仍放不下会在核对清单里提示。",
 
   "slide_bottom_limit_emu": 4870000,
-  "_slide_bottom_limit_emu": "内容不能超过的下边界（页面底部蓝条上沿），单位 EMU。"
+  "_slide_bottom_limit_emu": "内容不能超过的下边界（页面底部蓝条上沿），单位 EMU。",
+
+  "me_update": {
+    "_说明": "“更新 M&E 台账”功能的规则。",
+    "codeg_people": ["陈书翰"],
+    "_codeg_people": "Code-G 表只更新这些负责人（Responsible person 列）的行。界面上也可以临时改。留空 [] = 全部。",
+    "codeg_types": ["SDR"],
+    "_codeg_types": "Code-G 表只更新这些文件类型（文件编号里的 SDR / MTS / MR 等）。留空 [] = 全部。",
+    "done_codes": ["A", "B", "C", "D", "O"],
+    "_done_codes": "Code-G 表“状态”列：最新代码在这里的填“已完成”，其余填“已上报”。",
+    "codeg_name_pattern": "*Code G*.xlsx",
+    "smartcity_name_pattern": "*Smart City*.xlsx",
+    "_name_pattern": "打开程序时，在上次所在文件夹里自动选中符合这些名字、修改时间最新的表。",
+    "material_groups": {
+      "MR/MTS": ["MR", "MTS"], "TBE": ["TBE"], "AR": ["AR"], "PO": ["PO"],
+      "NMR 601": ["NMR 601"], "NMR 602": ["NMR 602"], "NMR 603": ["NMR 603"]
+    },
+    "_material_groups": "Smart City 表 Material Submittals 页：第 1 行的分组名 → M&E 里对应的 sheet。"
+  }
 }
